@@ -42,11 +42,6 @@ const NotesProvider = (props: INotesProviderProps) => {
       const b = JSON.parse(localNotes)
       setNotes(b)
     }
-    let localLang = localStorage.getItem('lang')
-    if(localLang){
-      const b = JSON.parse(localLang);
-      setLang(b)
-    }
   }, [])
 
   useEffect(()=>{
@@ -55,10 +50,6 @@ const NotesProvider = (props: INotesProviderProps) => {
     const id = last >= 0 ? notes[last].id : 0;
     setCurrentId(id);
   }, [notes])
-
-  useEffect(()=>{
-    localStorage.setItem('lang', lang)
-  }, [lang])
 
   const addNote = (obj: ITodo)=>{
     const newNotes = [...notes, obj];
