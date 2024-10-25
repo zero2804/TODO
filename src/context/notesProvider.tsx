@@ -55,10 +55,6 @@ const NotesProvider = (props: INotesProviderProps) => {
     setCurrentId(id);
   }, [notes])
 
-  useEffect(()=>{
-    localStorage.setItem('lang', lang)
-  }, [lang])
-
   const addNote = (obj: ITodo)=>{
     const newNotes = [...notes, obj];
     setNotes(newNotes);
