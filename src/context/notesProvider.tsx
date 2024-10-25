@@ -44,8 +44,7 @@ const NotesProvider = (props: INotesProviderProps) => {
     }
     let localLang = localStorage.getItem('lang')
     if(localLang){
-      const b = JSON.parse(localLang);
-      setLang(b)
+      setLang(localLang)
     }
   }, [])
 
